@@ -22,7 +22,7 @@ export default function Post({ post, preview }) {
           <h1 className="text-4xl font-bold mb-4">{post.dayName}</h1>
           <RenderDate
             dateString={post.date}
-            className="font-semibold text-xl"
+            className="font-bold text-xl text-violet-light"
           />
           <h2 className="text-2xl font-bold mt-4">Úryvek z Bible</h2>
           <span className="font-mono">({post.source})</span>
