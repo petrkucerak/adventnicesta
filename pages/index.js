@@ -10,7 +10,8 @@ export default function Home({ allPosts }) {
         <title>Adventní cesta</title>
       </Head>
       <Layout>
-        <div>
+        <div className="mx-6 flex flex-col">
+          <img src="/icon.svg" className="h-64" />
           <h1 className="text-4xl font-bold">Adventní cesta</h1>
         </div>
         <Calendar posts={allPosts} />

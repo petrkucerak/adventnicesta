@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Calendar({ posts }) {
   return (
-    <div className="mx-4">
+    <div className="mx-6 my-6">
       <h4 className="text-2xl font-semibold">Listopad</h4>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
