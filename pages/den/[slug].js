@@ -31,7 +31,7 @@ export default function Post({ post, preview }) {
           <p className="tracking-wide text-lg whitespace-pre-line">
             {post.reflexion}
           </p>
-          <p className="text-lg mt-4 text-stone-600">
+          <p className="text-lg mt-4 text-stone-600 dark:text-stone-50">
             (Autor zamyšlení:{" "}
             <Link href={`/`} className="underline">
               {post.author}

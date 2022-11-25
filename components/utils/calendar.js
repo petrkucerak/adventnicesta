@@ -7,14 +7,16 @@ export default function Calendar({ posts }) {
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           const date_tmp = new Date(post.date);
-          if (date_tmp.getMonth() === 10) return <Day post={post} />;
+          if (date_tmp.getMonth() === 10)
+            return <Day key={post.slug} post={post} />;
         })}
       </div>
       <h4 className="text-2xl font-semibold">Prosinec</h4>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           const date_tmp = new Date(post.date);
-          if (date_tmp.getMonth() === 11) return <Day post={post} />;
+          if (date_tmp.getMonth() === 11)
+            return <Day key={post.slug} post={post} />;
         })}
       </div>
     </div>
