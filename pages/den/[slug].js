@@ -22,6 +22,7 @@ export async function getStaticProps({ params }) {
   const source = post.source;
   const reflexion = post.reflexion;
   const preayer = post.preayer;
+  const author = post.author;
   const slug = post.slug;
 
   return {
@@ -34,11 +35,16 @@ export async function getStaticProps({ params }) {
         source,
         reflexion,
         preayer,
+        author,
         slug,
       },
     },
   };
 }
+/**
+ * To builds pages
+ * @returns
+ */
 export async function getStaticPaths() {
   const posts = getAllPosts(["slug"]);
 
