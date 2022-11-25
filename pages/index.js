@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Calendar from "../components/utils/calendar";
+import NavButtons from "../components/utils/nav-buttons";
 import { getAllPosts } from "../lib/api";
 
 export default function Home({ allPosts }) {
@@ -17,8 +18,9 @@ export default function Home({ allPosts }) {
             alt="Filový rozcestník"
             title="Logo adventní cesty"
           />
-          <h1 className="text-4xl font-bold">Adventní cesta</h1>
+          <h1 className="text-4xl font-bold text-center">Adventní cesta</h1>
         </div>
+        <NavButtons posts={allPosts} />
         <Calendar posts={allPosts} />
       </Layout>
     </>
