@@ -13,7 +13,7 @@ export default function Home({ allPosts }) {
         <div className="mx-6 flex flex-col">
           <img
             src="/icon.svg"
-            className="h-64"
+            className="h-48"
             alt="Filový rozcestník"
             title="Logo adventní cesty"
           />

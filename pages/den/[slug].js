@@ -24,11 +24,11 @@ export default function Post({ post, preview }) {
             dateString={post.date}
             className="font-bold text-xl text-violet-light"
           />
-          <h2 className="text-2xl font-bold mt-4">Úryvek z Bible</h2>
+          <h2 className="text-2xl font-bold mt-8">Úryvek z Bible</h2>
           <span className="font-mono">({post.source})</span>
-          <p className="mt-2 italic tracking-wide text-lg">{post.quote}</p>
-          <h2 className="text-2xl font-bold mt-4 mb-2">Zamyšlení</h2>
-          <p className="tracking-wide text-lg whitespace-pre-line">
+          <p className="mt-2 tracking-wide text-lg">{post.quote}</p>
+          <h2 className="text-2xl font-bold mt-8 mb-2">Zamyšlení</h2>
+          <p className=" text-lg whitespace-pre-line">
             {post.reflexion}
           </p>
           <p className="text-lg mt-4 text-stone-600 dark:text-stone-50">
@@ -38,8 +38,8 @@ export default function Post({ post, preview }) {
             </Link>
             )
           </p>
-          <h2 className="text-2xl font-bold mt-4 mb-2">Vstupní modlitba</h2>
-          <p className="tracking-wide text-lg mb-6">{post.preayer}</p>
+          <h2 className="text-2xl font-bold mt-8 mb-2">Vstupní modlitba</h2>
+          <p className="text-lg mb-6">{post.preayer}</p>
         </article>
       </Layout>
     </>
