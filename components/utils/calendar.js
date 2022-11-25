@@ -3,7 +3,8 @@ import Link from "next/link";
 export default function Calendar({ posts }) {
   return (
     <div className="mx-6 my-6">
-      <h4 className="text-2xl font-bold ">Listopad</h4>
+      <h2 className="text-2xl font-bold uppercase">Kalendář</h2>
+      <h3 className="text-xl font-bold ">Listopad</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           const date_tmp = new Date(post.date);
@@ -11,7 +12,7 @@ export default function Calendar({ posts }) {
             return <Day key={post.slug} post={post} />;
         })}
       </div>
-      <h4 className="text-2xl font-bold ">Prosinec</h4>
+      <h3 className="text-xl font-bold ">Prosinec</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           const date_tmp = new Date(post.date);
@@ -28,7 +29,7 @@ function Day({ post }) {
     <Link
       id={post.slug}
       href={`/den/${post.slug}`}
-      className="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded text-center duration-200 hover:font-bold hover:text-violet-light"
+      className="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light"
     >
       {`${date.getDate()}. `}
     </Link>
