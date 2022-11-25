@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
+import Button from "../components/utils/button";
 import Calendar from "../components/utils/calendar";
 import NavButtons from "../components/utils/nav-buttons";
 import { getAllPosts } from "../lib/api";
@@ -22,6 +23,17 @@ export default function Home({ allPosts }) {
         </div>
         <NavButtons posts={allPosts} />
         <Calendar posts={allPosts} />
+        <h2 className="mx-6 text-2xl uppercase font-bold">O projektu</h2>
+        <p className="mx-6 text-lg mb-8">
+          Adventní cesta je webová aplikace k tištěné verzi knihy Advent, která
+          se každoročně vydává v Královéhradecké diecézi. Letos do knihy
+          přispívali zaměstanci charity z naší diecéze. Každý den si můžeš
+          přečíst evangelium, zamyšlení a krátkou modlitbu.
+        </p>
+        <div className="mx-6 flex flex-row justify-around mb-8">
+          <Button href={"/slova-biskupa-Jana"} content="slovo biskupa Jana" />
+          <Button href={"/slova-Anny-Maclove"} content="slovo Anny Maclové" />
+        </div>
       </Layout>
     </>
   );
