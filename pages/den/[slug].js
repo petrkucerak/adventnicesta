@@ -5,6 +5,7 @@ import { getPostBySlug, getAllPosts } from "../../lib/api";
 import Head from "next/head";
 import RenderDate from "../../components/utils/date";
 import ArticleHeader from "../../components/header";
+import Link from "next/link";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -17,15 +18,28 @@ export default function Post({ post, preview }) {
       </Head>
       <Layout>
         <ArticleHeader />
-        <article className="mx-4 max-w-[800px]">
+        <article className="mx-6 max-w-[800px]">
           <h1 className="text-4xl font-bold mb-4">{post.dayName}</h1>
-          <RenderDate dateString={post.date} className="font-semibold" />
-          <h2 className="text-xl font-bold mt-4 mb-2">Úryvek z Bible</h2>
-          <p className="">{post.quote}</p>
-          <h2 className="text-xl font-bold mt-4 mb-2">Zamyšlení</h2>
-          <p>{post.reflexion}</p>
-          <h2 className="text-xl font-bold mt-4 mb-2">Vstupní modlitba</h2>
-          <p>{post.preayer}</p>
+          <RenderDate
+            dateString={post.date}
+            className="font-semibold text-xl"
+          />
+          <h2 className="text-2xl font-bold mt-4">Úryvek z Bible</h2>
+          <span className="font-mono">({post.source})</span>
+          <p className="mt-2 italic tracking-wide text-lg">{post.quote}</p>
+          <h2 className="text-2xl font-bold mt-4 mb-2">Zamyšlení</h2>
+          <p className="tracking-wide text-lg whitespace-pre-line">
+            {post.reflexion}
+          </p>
+          <p className="text-lg mt-4 text-stone-600">
+            (Autor zamyšlení:{" "}
+            <Link href={`/`} className="underline">
+              {post.author}
+            </Link>
+            )
+          </p>
+          <h2 className="text-2xl font-bold mt-4 mb-2">Vstupní modlitba</h2>
+          <p className="tracking-wide text-lg mb-6">{post.preayer}</p>
         </article>
       </Layout>
     </>
