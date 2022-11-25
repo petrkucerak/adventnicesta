@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/layout";
+import Calendar from "../components/utils/calendar";
 import { getAllPosts } from "../lib/api";
 
 export default function Home({ allPosts }) {
@@ -9,8 +10,10 @@ export default function Home({ allPosts }) {
         <title>Adventní cesta</title>
       </Head>
       <Layout>
-        <h1 className="text-4xl font-bold">Adventni cesta</h1>
-        <div></div>
+        <div>
+          <h1 className="text-4xl font-bold">Adventní cesta</h1>
+        </div>
+        <Calendar posts={allPosts} />
       </Layout>
     </>
   );
