@@ -28,12 +28,10 @@ export default function Post({ post, preview }) {
           <span className="font-mono">({post.source})</span>
           <p className="mt-2 tracking-wide text-lg">{post.quote}</p>
           <h2 className="text-2xl font-bold mt-8 mb-2">Zamyšlení</h2>
-          <p className=" text-lg whitespace-pre-line">
-            {post.reflexion}
-          </p>
+          <p className=" text-lg whitespace-pre-line">{post.reflexion}</p>
           <p className="text-lg mt-4 text-stone-600 dark:text-stone-50">
             (Autor zamyšlení:{" "}
-            <Link href={`/`} className="underline">
+            <Link href={`/autori#${post.date}`} className="underline">
               {post.author}
             </Link>
             )

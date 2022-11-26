@@ -30,9 +30,10 @@ export default function Home({ allPosts }) {
           přispívali zaměstanci charity z naší diecéze. Každý den si můžeš
           přečíst evangelium, zamyšlení a krátkou modlitbu.
         </p>
-        <div className="mx-6 flex flex-row justify-around mb-8">
-          <Button href={"/slova-biskupa-Jana"} content="slovo biskupa Jana" />
-          <Button href={"/slova-Anny-Maclove"} content="slovo Anny Maclové" />
+        <div className="mx-6 flex flex-row justify-around mb-8 flex-wrap">
+          <Button href={"/autori"} content="Autoři" />
+          <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
+          <Button href={"/slova-Anny-Maclove"} content="Slova Anny Maclové" />
         </div>
       </Layout>
     </>
