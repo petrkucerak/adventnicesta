@@ -1,7 +1,8 @@
 import Link from "next/link";
 
 export default function NavButtons({ posts }) {
-  const now = new Date("2022-11-28");
+  // const now = new Date("2022-11-28"); // testing date
+  const now = new Date();
   const nowDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
   const yesterday = new Date(now.setDate(now.getDate() - 1));
   const yesterdayDate = `${yesterday.getFullYear()}-${
