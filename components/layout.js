@@ -5,7 +5,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Meta />
-      <div>
+      <div className="min-h-screen flex flex-col justify-between">
         <main>{children}</main>
         <Footer />
       </div>
