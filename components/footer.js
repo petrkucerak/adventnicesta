@@ -4,7 +4,12 @@ export default function Footer() {
   return (
     <footer className=" py-6 border-t-violet-light border-t mx-4 flex flex-row justify-between">
       <Link href={"/"}>
-        <img src="/icon.svg" className="w-8 inline" />{" "}
+        <img
+          src="/icon.svg"
+          className="w-8 inline"
+          alt="Fialový rozcestník"
+          title="Ikona aplikace"
+        />{" "}
         <span className="font-semibold text-violet-light">Adventní cesta</span>
       </Link>
       <div>
