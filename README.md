@@ -1,34 +1,105 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Adventní cesta
 
-## Getting Started
+## O projektu
 
-First, run the development server:
+Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hradci Králové, díky které bude možno překlopit adventní brožuru 2022 do online podoby.
 
-```bash
-npm run dev
-# or
+## Architektura projektu
+
+Aplikace je postavená na Next.js a o to, aby vypadala dobře se stará Tailwind. Obsah stránek s textem je kompilovaný z jsonu, který generuje speciální formulář, viz https://cestapustem.cz/form.
+
+Na pozadí běží service worker, který umožňuje:
+
+1. fungování offline a agresivní caching
+*2. využití push notifikací - ZATÍM NEAKTIVNÍ*
+
+## Příkazy
+
+```
+yarn
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Jak přidat texty
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. přejdi na stránku https://cestapustem.cz/form/
+2. vyplň formulář dle popisů
+3. stáhni si data ve formátu json
+4. pokud chceš přiložit k textu obrázek, použij stejné jméno jako je využito u vygenerovaného json souboru
+5. json soubory nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/_days
+6. obrázek nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/public/images
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Notifikace
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Push notifikace jsou spouštěny pomocí služby https://app.onesignal.com/apps.
 
-## Learn More
+Momentálně jsou nastaveny 2 templaty:
 
-To learn more about Next.js, take a look at the following resources:
+1. upozornění, pokud uživatel nenavštíví stránku více jak 13h - notifikace slouží k připomínání denních čtení
+2. upozornění, pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_Push notifikace podporují všechny platformy kromě mobilního safari._
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Audionahrávky
 
-## Deploy on Vercel
+V aplikaci jsou generovány audionahrávky k textům pomocí služby Azure Speech Serivces.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Více o této části si můžete přečíst zde: https://blog.petrkucerak.cz/post/Jak-z-blogu-vytvorit-podcast-pomoci-AI.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Privacy
+
+### Provozovatel
+
+Provozovatelem webové aplikace je držitel domény [adventnicesta.cz](https://www.nic.cz/whois/domain/adventnicesta.cz/)
+
+### Cookies
+
+Cookies je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči.
+
+Aplikace používá pouze technické soubory cookies, bez kterých by nemohla správně fungovat.
+
+### Analytics
+
+K zkvalitnění produktu shromažďujeme anonymizované údaje pomocí služeb:
+
+1. **Microsoft Clarity**
+    - nástroj sleduje chování uživatelů na webové aplikace
+    - zpracovatelem údajů je společnost Microsoft
+    - více informací najdete na adresách
+      - https://privacy.microsoft.com/cs-cz/privacystatement
+      - https://clarity.microsoft.com/terms
+      - https://clarity.microsoft.com/projects
+2. **CloudFlare Web Analytics**
+    - nástroj monitoruje návštěvnost webové aplikace
+    - zpracovatelem údajů je společnost CloudFlare, Inc.
+    - více informací na jdete na adresách
+      - https://www.cloudflare.com/web-analytics/
+      - https://www.cloudflare.com/privacypolicy/
+
+
+**_Soukromí je velice důležité a proto používáme služby, které jsou plně anonymní!_**
+
+### Notifikace
+
+K správě Push Notifikací využíváme službu OneSignal. Nástroj analyzuje manipulaci s notifikačními bannery. Zpracovatelem je společnost OneSignal.
+
+Více informací najdete na stránkách:
+- https://onesignal.com/privacy
+- https://onesignal.com/privacy_policy
+- https://onesignal.com/
+
+
+### Infrastruktura
+
+Shromažďujeme anonymizované údaje a identifikovatelné údaje obsahující IP adresu pomocí služeb CloudFlare. Tento nástroj sleduje přístupy uživatelů na naše webové stránkách především za účelem zabezpečení služby a prevence podvodů.
+
+Zpracovatelem je společnost CloudFlare, Inc. Toto zpracování je oprávněným zájmem Provozovatele, neboť se jedná o zabezpečení infrastruktury.
+
+Další informace o CloudFlare naleznete na adresách:
+- https://www.cloudflare.com/privacypolicy/
+- https://www.cloudflare.com/website-terms/
+- https://www.cloudflare.com/cookie-policy/
+
+### Zpracování osobních údajů
+
+Z výše poskytnutých informací jasně vyplývá, že provozovatel webové aplikace není správcem žádných osobních údajů.
