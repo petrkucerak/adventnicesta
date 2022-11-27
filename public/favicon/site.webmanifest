@@ -6,7 +6,7 @@
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
-  "description": "Tvůj průvodce na cestě adventem",
+  "description": "Tvůj průvodce na cestě Adventem",
   "icons": [
     {
       "src": "/favicon/android-chrome-36x36.png",
