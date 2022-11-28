@@ -61,27 +61,28 @@ function createSSML(content) {
   return `
 <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
   <voice name="cs-CZ-AntoninNeural">
-    <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${content.day} a autorem zamyšlení je ${content.author}.
+    <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${content.dayName} a autorem zamyšlení je ${content.author}.
       <break strength="medium" />
     </prosody>
+    <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
   </voice>
-  <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-5%" pitch="-5%">Úryvek z Bible\n
       <break strength="medium" />${content.quote}
     </prosody>
+    <audio src="https://adventnicesta.cz/audio/02_adventni_cesta-break1.mp3"/>
   </voice>
-  <audio src="https://adventnicesta.cz/audio/02_adventni_cesta-break1.mp3"/>
   <voice name="cs-CZ-AntoninNeural">
-    <prosody rate="-15%" pitch="-5%">Zamyšlení\n
+    <prosody rate="-18%" pitch="-5%">Zamyšlení\n
       <break strength="medium" />${content.reflexion}
     </prosody>
+    <audio src="https://adventnicesta.cz/audio/03_adventni_cesta-break2.mp3"/>
   </voice>
-  <audio src="https://adventnicesta.cz/audio/03_adventni_cesta-break2.mp3"/>
-  <voice name="cs-CZ-AntoninNeural">
+  <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
-      <break strength="medium" />${content.preayer}
+      <break strength="medium" />${content.preayer} žije a kraluje po všechny věky věků. Amen.
     </prosody>
+    <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
   </voice>
 </speak>
     `;
