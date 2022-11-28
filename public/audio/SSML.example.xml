@@ -1,0 +1,32 @@
+<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
+  <mstts:backgroundaudio src="https://contoso.com/sample.wav" volume="0.7" fadein="3000" fadeout="4000" />
+  <voice name="cs-CZ-AntoninNeural">
+    <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${contentJSON.day} a autorem zamyšlení je ${contentJSON.author}.
+      <break strength="medium" />
+    </prosody>
+  </voice>
+
+  <audio src="string" /></audio>
+
+  <voice name="cs-CZ-VlastaNeural">
+    <prosody rate="-5%" pitch="-5%">Úryvek z Bible\n
+      <break strength="medium" />${contentJSON.quote}
+    </prosody>
+  </voice>
+
+  <audio src="string" /></audio>
+
+  <voice name="cs-CZ-AntoninNeural">
+    <prosody rate="-15%" pitch="-5%">Zamyšlení\n
+      <break strength="medium" />${contentJSON.reflexion}
+    </prosody>
+  </voice>
+
+  <audio src="string" /></audio>
+  
+  <voice name="cs-CZ-AntoninNeural">
+    <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
+      <break strength="medium" />${contentJSON.preayer}
+    </prosody>
+  </voice>
+</speak>
