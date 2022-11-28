@@ -65,25 +65,19 @@ function createSSML(content) {
       <break strength="medium" />
     </prosody>
   </voice>
-
-  <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audios/01_adventni_cesta-intro.mp3?raw=true" /></audio>
-
+  <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-5%" pitch="-5%">Úryvek z Bible\n
       <break strength="medium" />${content.quote}
     </prosody>
   </voice>
-
-  <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audios/02_adventni_cesta-break1.mp3?raw=true" /></audio>
-
+  <audio src="https://adventnicesta.cz/audio/02_adventni_cesta-break1.mp3"/>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Zamyšlení\n
       <break strength="medium" />${content.reflexion}
     </prosody>
   </voice>
-
-  <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audios/03_adventni_cesta-break2.mp3?raw=true" /></audio>
-
+  <audio src="https://adventnicesta.cz/audio/03_adventni_cesta-break2.mp3"/>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
       <break strength="medium" />${content.preayer}
