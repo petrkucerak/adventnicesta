@@ -6,6 +6,8 @@ import Head from "next/head";
 import RenderDate from "../../components/utils/date";
 import ArticleHeader from "../../components/header";
 import Link from "next/link";
+import AudioPlayer from "react-h5-audio-player";
+import "react-h5-audio-player/lib/styles.css";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
@@ -23,6 +25,15 @@ export default function Post({ post, preview }) {
           <RenderDate
             dateString={post.date}
             className="font-bold text-xl text-violet-light"
+          />
+          <h2 className="text-2xl font-bold mt-8">Podcast</h2>
+          <p className="text-lg mb-4 italic">
+            Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného
+            AI.
+          </p>
+          <AudioPlayer
+            src={`/audio/${post.slug}.mp3`}
+            autoPlay={false}
           />
           <h2 className="text-2xl font-bold mt-8">Úryvek z Bible</h2>
           <span className="font-mono">({post.source})</span>
