@@ -8,5 +8,5 @@ module.exports = withPWA({
   register: false,
   skipWaiting: true,
   cacheOnFrontEndNav: true,
-  publicExcludes: ["favicon/*/**"],
+  publicExcludes: ["favicon/*/**", "audio/**"],
 });
