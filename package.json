@@ -7,7 +7,8 @@
     "turbodev": "concurrently \"next dev --turbo\" \"tailwindcss -i styles/globals.css -o styles/dist.css -w\"",
     "build": "tailwindcss -m -i styles/globals.css -o styles/dist.css && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "next-sitemap"
   },
   "dependencies": {
     "eslint": "8.28.0",
@@ -15,6 +16,7 @@
     "gray-matter": "^4.0.3",
     "next": "13.0.5",
     "next-pwa": "^5.6.0",
+    "next-sitemap": "^3.1.32",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
