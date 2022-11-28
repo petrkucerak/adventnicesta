@@ -15,14 +15,51 @@ module.exports.text2speech = () => {
     const content = fs.readFileSync(`_days/${file}`);
     const json = JSON.parse(content);
     const ssmlString = createSSML(json);
-    console.log(ssmlString);
+    if (json.slug !== "2022-12-12") return;
+
+    synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
   });
 };
+
+function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
+  const speechConfig = sdk.SpeechConfig.fromSubscription(
+    SPEECH_KEY,
+    SPEECH_REGION
+  );
+
+  // Set the output format
+  speechConfig.speechSynthesisOutputFormat = 21;
+  const audioConfig = sdk.AudioConfig.fromAudioFileOutput(
+    `public/audio/${filename}.mp3`
+  );
+
+  const synthesizer = new sdk.SpeechSynthesizer(speechConfig, audioConfig);
+
+  synthesizer.speakSsmlAsync(
+    ssml,
+    (result) => {
+      if (result.errorDetails) {
+        console.error(result.errorDetails);
+      } else {
+        console.log(JSON.stringify(result));
+      }
+
+      synthesizer.close();
+      if (result) {
+        // return result as stream
+        return fs.createReadStream(`public/audio/${filename}.mp3`);
+      }
+    },
+    (error) => {
+      console.log(error);
+      synthesizer.close();
+    }
+  );
+}
 
 function createSSML(content) {
   return `
 <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
-  <mstts:backgroundaudio src="https://contoso.com/sample.wav" volume="0.7" fadein="3000" fadeout="4000" />
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${content.day} a autorem zamyšlení je ${content.author}.
       <break strength="medium" />
