@@ -15,7 +15,7 @@ module.exports.text2speech = () => {
     const content = fs.readFileSync(`_days/${file}`);
     const json = JSON.parse(content);
     const ssmlString = createSSML(json);
-    if (json.slug !== "2022-12-12") return;
+    if (json.slug !== "2022-12-14") return; // for testing
 
     synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
   });
