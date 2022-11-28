@@ -8,7 +8,8 @@
     "build": "tailwindcss -m -i styles/globals.css -o styles/dist.css && next build",
     "start": "next start",
     "lint": "next lint",
-    "sitemap": "next-sitemap"
+    "sitemap": "next-sitemap",
+    "text2speech": "node -e 'require(\"./text2speech\").text2speech()'"
   },
   "dependencies": {
     "eslint": "8.28.0",
