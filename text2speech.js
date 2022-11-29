@@ -11,14 +11,19 @@ module.exports.text2speech = () => {
   }
 
   const dir = fs.readdirSync("_days/");
-  dir.map((file) => {
-    const content = fs.readFileSync(`_days/${file}`);
-    const json = JSON.parse(content);
-    const ssmlString = createSSML(json);
-    // if (json.slug !== "2022-12-01") return; // for testing
+  const content = fs.readFileSync(`_days/${dir[argv[3]]}`);
+  const json = JSON.parse(content);
+  const ssmlString = createSSML(json);
+  synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
 
-    synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
-  });
+  // dir.map((file) => {
+  //   const content = fs.readFileSync(`_days/${file}`);
+  //   const json = JSON.parse(content);
+  //   const ssmlString = createSSML(json);
+  //   // if (json.slug !== "2022-12-01") return; // for testing
+
+  //   synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
+  // });
 };
 
 function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
