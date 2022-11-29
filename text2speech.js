@@ -15,7 +15,7 @@ module.exports.text2speech = () => {
     const content = fs.readFileSync(`_days/${file}`);
     const json = JSON.parse(content);
     const ssmlString = createSSML(json);
-    if (json.slug !== "2022-12-01") return; // for testing
+    // if (json.slug !== "2022-12-01") return; // for testing
 
     synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
   });
@@ -80,7 +80,7 @@ function createSSML(content) {
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
-      <break strength="medium" />${content.preayer} žije a kraluje po všechny věky věků. Amen.
+      <break strength="medium" />${content.preayer} Amen.
     </prosody>
     <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
   </voice>
