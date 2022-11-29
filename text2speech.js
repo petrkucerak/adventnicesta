@@ -14,6 +14,7 @@ module.exports.text2speech = () => {
   const content = fs.readFileSync(`_days/${dir[argv[3]]}`);
   const json = JSON.parse(content);
   const ssmlString = createSSML(json);
+  console.log(`Start to synthetisize ${json.slug}.mp3`);
   synthesizeSpeech(argv[1], argv[2], ssmlString, json.slug);
 
   // dir.map((file) => {
@@ -69,25 +70,25 @@ function createSSML(content) {
     <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${content.dayName} a autorem zamyšlení je ${content.author}.
       <break strength="medium" />
     </prosody>
-    <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
+    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-5%" pitch="-5%">Úryvek z Bible\n
       <break strength="medium" />${content.quote}
     </prosody>
-    <audio src="https://adventnicesta.cz/audio/02_adventni_cesta-break1.mp3"/>
+    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
-    <prosody rate="-18%" pitch="-5%">Zamyšlení\n
+    <prosody rate="-15%" pitch="-5%">Zamyšlení\n
       <break strength="medium" />${content.reflexion}
     </prosody>
-    <audio src="https://adventnicesta.cz/audio/03_adventni_cesta-break2.mp3"/>
+    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
       <break strength="medium" />${content.preayer} Amen.
     </prosody>
-    <audio src="https://adventnicesta.cz/audio/01_adventni_cesta-intro.mp3" />
+    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
   </voice>
 </speak>
     `;
