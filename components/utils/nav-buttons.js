@@ -1,5 +1,10 @@
 import Link from "next/link";
 
+function formateDayNum(num) {
+  if (num < 10) return `0${num}`;
+  else return `${num}`;
+}
+
 export default function NavButtons({ posts }) {
   // const now = new Date("2022-11-28"); // testing date
   const now = new Date();
@@ -11,11 +16,13 @@ export default function NavButtons({ posts }) {
   const tomorrow = new Date(now.setDate(now.getDate() + 2));
   const tomorrowDate = `${tomorrow.getFullYear()}-${
     tomorrow.getMonth() + 1
-  }-${tomorrow.getDate()}`;
+  }-${formateDayNum(tomorrow.getDate())}`;
 
   // console.log(yesterdayDate, nowDate, tomorrowDate);
   let yesterdayStatus, nowStatus, tomorrowStatus;
   yesterdayStatus = nowStatus = tomorrowStatus = "hidden";
+
+  console.log(tomorrowDate);
 
   posts.map((post) => {
     if (nowDate === post.date) nowStatus = "";
