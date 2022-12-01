@@ -8,11 +8,13 @@ function formateDayNum(num) {
 export default function NavButtons({ posts }) {
   // const now = new Date("2022-11-28"); // testing date
   const now = new Date();
-  const nowDate = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+  const nowDate = `${now.getFullYear()}-${now.getMonth() + 1}-${formateDayNum(
+    now.getDate()
+  )}`;
   const yesterday = new Date(now.setDate(now.getDate() - 1));
   const yesterdayDate = `${yesterday.getFullYear()}-${
     yesterday.getMonth() + 1
-  }-${yesterday.getDate()}`;
+  }-${formateDayNum(yesterday.getDate())}`;
   const tomorrow = new Date(now.setDate(now.getDate() + 2));
   const tomorrowDate = `${tomorrow.getFullYear()}-${
     tomorrow.getMonth() + 1
@@ -22,7 +24,7 @@ export default function NavButtons({ posts }) {
   let yesterdayStatus, nowStatus, tomorrowStatus;
   yesterdayStatus = nowStatus = tomorrowStatus = "hidden";
 
-  console.log(tomorrowDate);
+  // console.log(tomorrowDate);
 
   posts.map((post) => {
     if (nowDate === post.date) nowStatus = "";
