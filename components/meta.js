@@ -10,6 +10,7 @@ const appAuthor = `Petr Kučera`;
 export default function Meta() {
   return (
     <Head>
+      <meta name="msvalidate.01" content="9E75B78C2EE6CAE9C654F28AF759C4D0" /> {/* Bing webmasters verification*/}
       <link
         rel="apple-touch-icon"
         sizes="180x180"
