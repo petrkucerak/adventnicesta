@@ -15,8 +15,8 @@ export default function Post({ post, preview }) {
   if (!router.isFallback && !post?.slug) return <Error statusCode={404} />;
   const title = `${post.dayName} - Adventní cesta`;
 
-  const titleClass = "";
-  const textClass = "";
+  const titleClass = "titleClass";
+  const textClass = "textClass";
   return (
     <>
       <Head>
@@ -30,26 +30,38 @@ export default function Post({ post, preview }) {
             dateString={post.date}
             className="font-bold text-xl text-violet-light"
           />
-          <h2 className="text-2xl font-bold mt-8">Podcast</h2>
-          <p className="text-lg mb-4 italic">
+          <h2 className={`${titleClass} text-2xl font-bold mt-8`}>Podcast</h2>
+          <p className={`${textClass} text-lg mb-4 italic`}>
             Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného
             AI.
           </p>
           <AudioPlayer src={`/audio/${post.slug}.mp3`} autoPlay={false} />
-          <h2 className="text-2xl font-bold mt-8">Úryvek z Bible</h2>
-          <span className="font-mono">({post.source})</span>
-          <p className="mt-2 tracking-wide text-lg">{post.quote}</p>
-          <h2 className="text-2xl font-bold mt-8 mb-2">Zamyšlení</h2>
-          <p className=" text-lg whitespace-pre-line">{post.reflexion}</p>
-          <p className="text-lg mt-4 text-stone-600 dark:text-stone-50">
+          <h2 className={`${titleClass} text-2xl font-bold mt-8`}>
+            Úryvek z Bible
+          </h2>
+          <span className={`${textClass} font-mono`}>({post.source})</span>
+          <p className={`${textClass} mt-2 tracking-wide text-lg`}>
+            {post.quote}
+          </p>
+          <h2 className={`${titleClass} text-2xl font-bold mt-8 mb-2`}>
+            Zamyšlení
+          </h2>
+          <p className={`${textClass} text-lg whitespace-pre-line`}>
+            {post.reflexion}
+          </p>
+          <p
+            className={`${textClass} text-lg mt-4 text-stone-600 dark:text-stone-50`}
+          >
             (Autor zamyšlení:{" "}
             <Link href={`/autori#${post.date}`} className="underline">
               {post.author}
             </Link>
             )
           </p>
-          <h2 className="text-2xl font-bold mt-8 mb-2">Vstupní modlitba</h2>
-          <p className="text-lg mb-6">{post.preayer}</p>
+          <h2 className={`${titleClass} text-2xl font-bold mt-8 mb-2`}>
+            Vstupní modlitba
+          </h2>
+          <p className={`${textClass} text-lg mb-6`}>{post.preayer}</p>
         </article>
         <FontSizeControler titleClass={titleClass} textClass={textClass} />
       </Layout>
