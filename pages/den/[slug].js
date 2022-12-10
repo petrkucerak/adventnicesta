@@ -8,11 +8,15 @@ import ArticleHeader from "../../components/header";
 import Link from "next/link";
 import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
+import FontSizeControler from "../../components/utils/fontsize-controler";
 
 export default function Post({ post, preview }) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) return <Error statusCode={404} />;
   const title = `${post.dayName} - Adventní cesta`;
+
+  const titleClass = "";
+  const textClass = "";
   return (
     <>
       <Head>
@@ -31,10 +35,7 @@ export default function Post({ post, preview }) {
             Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného
             AI.
           </p>
-          <AudioPlayer
-            src={`/audio/${post.slug}.mp3`}
-            autoPlay={false}
-          />
+          <AudioPlayer src={`/audio/${post.slug}.mp3`} autoPlay={false} />
           <h2 className="text-2xl font-bold mt-8">Úryvek z Bible</h2>
           <span className="font-mono">({post.source})</span>
           <p className="mt-2 tracking-wide text-lg">{post.quote}</p>
@@ -50,6 +51,7 @@ export default function Post({ post, preview }) {
           <h2 className="text-2xl font-bold mt-8 mb-2">Vstupní modlitba</h2>
           <p className="text-lg mb-6">{post.preayer}</p>
         </article>
+        <FontSizeControler titleClass={titleClass} textClass={textClass} />
       </Layout>
     </>
   );
