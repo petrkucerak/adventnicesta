@@ -34,6 +34,12 @@ export default function Home({ allPosts }) {
           <Button href={"/autori"} content="Autoři" />
           <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
           <Button href={"/slova-Anny-Maclove"} content="Slova Anny Maclové" />
+          <Button
+            href={"https://forms.gle/n19QvNFMW5A5RbNBA"}
+            content="Zpětná vazba"
+            target={"_blank"}
+            rel={"noreferrer noopener"}
+          />
         </div>
       </Layout>
     </>
