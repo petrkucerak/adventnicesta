@@ -4,7 +4,7 @@
 
 ### Interpretace výsledků
 
-Lidé používali aplikaci na mobilu. Úvodní obrazovak i text jsou přehledné. Poslouchali audionahrávky. V narhávkách by bylo dobré zlepšit syntetizaci slov jako Jesus atd.
+Lidé používali aplikaci na mobilu. Úvodní obrazovak i text jsou přehledné. Poslouchali audionahrávky. V nahrávkách by bylo dobré zlepšit syntetizaci slov jako Jesus atd.
 
 Uživatelé by takovýchto zamyšlení uvítali rádi více.
 
@@ -36,6 +36,6 @@ Web dělán na posledni chvíli a proto špatně indexován. Více viz složka `
 
 ## Obecně
 
-- notifikace vedou více lídí
-- lepší propagace
-- vyrobit dříve - lepší indexace
+- Notifikace přivedou prvidelně více lidí. Na druhou stranu je aplikace výborně použitelná i bez nich.
+- Při větší propagaci, by se aplikace určitě více používala. Většina lidí o ni vůbec nevěděla a když v průběhu adventu zjistili, co vše nabízí, začali používat a říkali, že je mrzí, že o ní nevěděli dříve. (viz osobní rozhovory a diskuze s Dejvem Špeldou)
+- Pokud by se aplikace vypublikovala dříve, byla by lépe idenxovatelná. Tedy by ji šlo najít v google dříve než v polovině adventu. Také by ji šlo exportovat a přidat do Apple Store a Google Play.
