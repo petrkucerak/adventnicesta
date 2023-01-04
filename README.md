@@ -4,6 +4,8 @@
 
 Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hradci Králové, díky které bude možno překlopit adventní brožuru 2022 do online podoby.
 
+**[ZHODNOCENÍ BROŽURY PRO ADVENT 2022](https://github.com/petrkucerak/adventnicesta/tree/main/feedback/2022)**
+
 ## Architektura projektu
 
 Aplikace je postavená na Next.js a o to, aby vypadala dobře se stará Tailwind. Obsah stránek s textem je kompilovaný z jsonu, který generuje speciální formulář, viz https://cestapustem.cz/form.
