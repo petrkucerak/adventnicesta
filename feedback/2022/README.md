@@ -1,5 +1,11 @@
 # Zpětná vazba k adventu 2022
 
+## Obecně
+
+- Notifikace přivedou prvidelně více lidí. Na druhou stranu je aplikace výborně použitelná i bez nich.
+- Při větší propagaci, by se aplikace určitě více používala. Většina lidí o ni vůbec nevěděla a když v průběhu adventu zjistili, co vše nabízí, začali používat a říkali, že je mrzí, že o ní nevěděli dříve. (viz osobní rozhovory a diskuze s Dejvem Špeldou)
+- Pokud by se aplikace vypublikovala dříve, byla by lépe idenxovatelná. Tedy by ji šlo najít v google dříve než v polovině adventu. Také by ji šlo exportovat a přidat do Apple Store a Google Play.
+
 ## Dotazník
 
 ### Interpretace výsledků
@@ -33,9 +39,3 @@ Na aplikaci nebyl proveden žádný útok, který by byl zachycen Cloudflarem.
 ## Google Search Console
 
 Web dělán na posledni chvíli a proto špatně indexován. Více viz složka `search-console`.
-
-## Obecně
-
-- Notifikace přivedou prvidelně více lidí. Na druhou stranu je aplikace výborně použitelná i bez nich.
-- Při větší propagaci, by se aplikace určitě více používala. Většina lidí o ni vůbec nevěděla a když v průběhu adventu zjistili, co vše nabízí, začali používat a říkali, že je mrzí, že o ní nevěděli dříve. (viz osobní rozhovory a diskuze s Dejvem Špeldou)
-- Pokud by se aplikace vypublikovala dříve, byla by lépe idenxovatelná. Tedy by ji šlo najít v google dříve než v polovině adventu. Také by ji šlo exportovat a přidat do Apple Store a Google Play.
