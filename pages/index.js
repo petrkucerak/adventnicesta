@@ -33,7 +33,7 @@ export default function Home({ allPosts }) {
         <div className="mx-6 flex flex-row justify-around mb-8 flex-wrap">
           <Button href={"/autori"} content="Autoři" />
           <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
-          <Button href={"/slova-Anny-Maclove"} content="Slova Anny Maclové" />
+          <Button href={"/slova-Prokopa-Broze"} content="Slova Prokopa Brože" />
           <Button
             href={"https://forms.gle/n19QvNFMW5A5RbNBA"}
             content="Zpětná vazba"
