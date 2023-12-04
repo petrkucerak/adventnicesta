@@ -40,9 +40,10 @@ export default function Post({ post, preview }) {
             Úryvek z Bible
           </h2>
           <span className={`${textClass} font-mono`}>({post.source})</span>
-          <p className={`${textClass} mt-2 tracking-wide text-lg`}>
-            {post.quote}
-          </p>
+          <p
+            className={`${textClass} mt-2 tracking-wide text-lg`}
+            dangerouslySetInnerHTML={{ __html: post.quote }}
+          />
           <h2 className={`${titleClass} text-2xl font-bold mt-8 mb-2`}>
             Zamyšlení
           </h2>
