@@ -4,14 +4,14 @@ export default function Calendar({ posts }) {
   return (
     <div className="mx-6 my-6">
       <h2 className="text-2xl font-bold uppercase">Kalendář</h2>
-      <h3 className="text-xl font-bold ">Listopad</h3>
+      {/* <h3 className="text-xl font-bold ">Listopad</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
           const date_tmp = new Date(post.date);
           if (date_tmp.getMonth() === 10)
             return <Day key={post.slug} post={post} />;
         })}
-      </div>
+      </div> */}
       <h3 className="text-xl font-bold ">Prosinec</h3>
       <div className="grid grid-cols-5 auto-cols-max gap-y-2">
         {posts.map((post) => {
