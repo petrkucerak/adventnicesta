@@ -1,10 +1,10 @@
 #! /bin/bash
 
-for i in {0..20}; do
+for i in {2..20}; do
    echo ""
    echo "Run script for file ${i}"
-   yarn text2speech "36b70f5eb9ab4ebfa67f92cbf0b2c23c" "westus" $i
-   sleep 90s
+   yarn text2speech "692053a2cc5d44c7a5d0e9a1f6bce302" "northeurope" $i
+   sleep 10s
 
 done
 echo "All audiofiles has been exported"
