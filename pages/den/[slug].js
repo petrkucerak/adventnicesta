@@ -46,9 +46,10 @@ export default function Post({ post, preview }) {
           <h2 className={`${titleClass} text-2xl font-bold mt-8 mb-2`}>
             Zamyšlení
           </h2>
-          <p className={`${textClass} text-lg whitespace-pre-line`}>
-            {post.reflexion}
-          </p>
+          <p
+            className={`${textClass} text-lg whitespace-pre-line`}
+            dangerouslySetInnerHTML={{ __html: post.reflexion }}
+          />
           <p
             className={`${textClass} text-lg mt-4 text-stone-600 dark:text-stone-50`}
           >
