@@ -64,32 +64,61 @@ function synthesizeSpeech(SPEECH_KEY, SPEECH_REGION, ssml, filename) {
 }
 
 function createSSML(content) {
-  return `
-<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
+  return `<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="cs-CZ">
   <voice name="cs-CZ-AntoninNeural">
-    <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem!\nDnes je ${content.dayName} a autorem zamyšlení je ${content.author}.
-      <break strength="medium" />
+    <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem! Dnes je ${content.dayName} a autorem zamyšlení je ${content.author}.
+      <break strength="weak" />
     </prosody>
     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <break strength="medium" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
-    <prosody rate="-5%" pitch="-5%">Úryvek z Bible\n
-      <break strength="medium" />${content.quote}
+    <prosody rate="-5%" pitch="-5%">Úryvek z Bible
+      <break strength="medium" />${content.quote.replaceAll("&nbsp;", " ")}
     </prosody>
     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
-    <prosody rate="-15%" pitch="-5%">Zamyšlení\n
-      <break strength="medium" />${content.reflexion}
+    <prosody rate="-15%" pitch="-5%">Zamyšlení
+      <break strength="medium" />${content.reflexion.replaceAll("&nbsp;", " ")}
     </prosody>
     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
-    <prosody rate="-15%" pitch="-5%">Závěrečná modlitba\n
-      <break strength="medium" />${content.preayer} Amen.
+    <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
+      <break strength="medium" />${content.preayer.replaceAll("&nbsp;", " ")} Amen.
     </prosody>
     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
   </voice>
-</speak>
-    `;
+</speak>`;
 }
+
+// function createSSML(content) {
+//   return `<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="cs-CZ">
+//   <voice name="cs-CZ-AntoninNeural">
+//     <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem! Dnes je ${content.dayName} a autorem zamyšlení je ${content.author}.
+//       <break strength="weak" />
+//     </prosody>
+//     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+//     <break strength="medium" />
+//   </voice>
+//   <voice name="cs-CZ-VlastaNeural">
+//     <prosody rate="-5%" pitch="-5%">Úryvek z Bible
+//       <break strength="medium" />${content.quote.replaceAll("&nbsp;", " ").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<em>","").replaceAll("</em>","").replaceAll("<br/>","<break strength='Weak' />")}
+//     </prosody>
+//     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
+//   </voice>
+//   <voice name="cs-CZ-AntoninNeural">
+//     <prosody rate="-15%" pitch="-5%">Zamyšlení
+//       <break strength="medium" />${content.reflexion.replaceAll("&nbsp;", " ").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<em>","").replaceAll("</em>","").replaceAll("<br/>","<break strength='Weak' />")}
+//     </prosody>
+//     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
+//   </voice>
+//   <voice name="cs-CZ-VlastaNeural">
+//     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
+//       <break strength="medium" />${content.preayer.replaceAll("&nbsp;", " ").replaceAll("<strong>","").replaceAll("</strong>","").replaceAll("<em>","").replaceAll("</em>","").replaceAll("<br/>","<break strength='Weak' />")} Amen.
+//     </prosody>
+//     <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+//   </voice>
+// </speak>`;
+// }

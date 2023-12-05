@@ -6,7 +6,7 @@ export default function SlovaBiskupaJana() {
   return (
     <>
       <Head>
-        <title>Slova Biskupa Jana - Adventní cesta</title>
+        <title>Slova Biskupa Jana Adventní cesta</title>
       </Head>
       <Layout>
         <ArticleHeader />
@@ -16,41 +16,37 @@ export default function SlovaBiskupaJana() {
             Bratři a sestry v Kristu, milí čtenáři,
           </p>
           <p className="text-lg mb-4">
-            adventní doba je příliš krátká na to, abychom si v ní plně uvědomili
-            velikost Božího daru, za který Mu o Vánocích děkujeme: náš Stvořitel
-            s námi přichází do přímého, mezilidského kontaktu. Nabízí nám osobní
-            vztah, který navíc přesahuje časnost tohoto světa. Vlastně ani celý
-            život není dost dlouhý na pochopení tohoto tajemství. Když však
-            Ježíš vyzývá učedníky, aby Ho následovali, nevybízí je jenom k
-            abstraktním úvahám. Především chce, aby vstali, vyšli mezi druhé
-            lidi a napodobovali Ho. Aby činili to, co činil a činí On.
+            všichni křesťané jsou povoláni k tomu, aby ve společenství Církve v
+            každé době a na každém kontinentu zpřítomňovali radostnou zvěst
+            Evangelia, aby ji aplikovali na konkrétní situace, oživovali,
+            nechali promlouvat k duchu dané doby. Každý z nás má jiné dary a Pán
+            ho posílá do světa s jedinečným záměrem. V tradici Církve se vyvi-
+            nulo jedno specifické povolání, které kombinuje hluboký důraz na
+            Písmo, výuku a civilní život, a to je povolání katechetů a
+            katechistů. Své znalosti denně propojují s žitou praxí, když
+            vyučují náboženství, chodí do rodin, vedou katecheze a moderují
+            setkávání pro různé skupiny věřících.
           </p>
           <p className="text-lg mb-4">
-            Ač mnohá Kristova slova, činy a podobenství nechávají prostor
-            přemýšlení o jejich významu, v základu všech je beze sporu
-            milosrdenství. Bůh člověku prokazuje nezaslouženou milost. Přichází
-            za ním, i když nemusí, učí ho a vede, i když nemusí, obětuje se za
-            něho, i když nemusí. Napodobovat našeho Pána tedy znamená v první
-            řadě činit skutky nezištné lásky. Je k nim povolán každý křesťan
-            jako jednotlivec i Církev jako společenství na místní, diecézní i
-            celosvětové úrovni. Charita, jak se tento její rozměr tradičně
-            nazývá, tedy není jen doplňkovou institucí, ale projevem samotného
-            základu našeho křesťanského povolání. Není jen záležitostí
-            hromadných sbírek či finančních darů, ale výchozího životního
-            postoje: každý z nás je do života povolán především proto, aby
-            konkrétními skutky prokazoval druhým caritas, nezištnou, milosrdnou
-            lásku.
+            Letošní adventní brožura je specifická tím, že prostor pro duchovní
+            zamyšlení na každý den dostávají právě oni – katechetky a katecheté
+            působící v královéhradecké diecézi. O letošním adventu se s námi
+            podělí o svou jedinečnou perspektivu, o své úvahy i praktické
+            poznatky.
           </p>
           <p className="text-lg mb-4">
-            Pokud se v adventní době vydáme právě touto cestou, pak se pravé
-            podstatě vánočního daru přiblížíme mnohem více než sebevětší snahou
-            vyložit jej teoreticky, „od stolu“. Děkuji autorům všech textů v
-            této brožuře, jejichž moudrost a zkušenosti nás budou letošní
-            adventní dobou v tomto smyslu provázet, a ze srdce Vám na jejím
-            počátku žehnám!
+            Adventní příprava na příchod našeho Pána by neměla zůstat jen u
+            teoretických úvah, ale jejím cílem je především obrácení našeho
+            srdce k Němu, zdokonalení žité víry, která se ve světě projevuje
+            konkrétními skutky lásky. Kéž nám tedy texty našich katechetů,
+            vycházející z jejich duchovního života a hluboké zkušenosti, co
+            nejúčinněji pomáhají, abychom společně přivítali Pána s otevřeným
+            srdcem.
           </p>
-          <p className="text-lg mb-1 italic">V Kristu a Marii,</p>
-          <p className="text-lg mb-8 italic">Váš + biskup Jan</p>
+          <p className="text-lg mb-4">
+            K tomu Vám na prahu letošní adventní doby ze srdce žehnám!
+          </p>
+          <p className="text-lg mb-8 italic">Váš biskup + Jan</p>
         </article>
       </Layout>
     </>
