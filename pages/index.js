@@ -33,8 +33,6 @@ export default function Home({ allPosts }) {
         </p>
         <div className="mx-6 flex flex-row justify-around mb-8 flex-wrap">
           <Button href={"/autori"} content="Autoři" />
-          <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
-          <Button href={"/slova-Prokopa-Broze"} content="Slova Prokopa Brože" />
           <Button
             href={"https://forms.gle/n19QvNFMW5A5RbNBA"}
             content="Zpětná vazba"
@@ -45,10 +43,13 @@ export default function Home({ allPosts }) {
             href={
               "https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=7ad72e34e408463e"
             }
-            content="Audio nahrávky na Spotify"
+            content="Nahrávky na Spotify"
             target={"_blank"}
             rel={"noreferrer noopener external"}
           />
+
+          <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
+          <Button href={"/slova-Prokopa-Broze"} content="Slova Prokopa Brože" />
         </div>
         <div className="mb-8">
           <h2 className="mx-6 text-2xl uppercase font-bold mb-2">
