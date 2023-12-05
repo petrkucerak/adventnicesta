@@ -26,10 +26,10 @@ export default function Home({ allPosts }) {
         <Calendar posts={allPosts} />
         <h2 className="mx-6 text-2xl uppercase font-bold">O projektu</h2>
         <p className="mx-6 text-lg mb-8">
-          Adventní cesta je webová aplikace k tištěné verzi knihy Advent, která
-          se každoročně vydává v Královéhradecké diecézi. Letos do knihy
-          přispívali katecheté naší diecéze. Každý den si můžeš přečíst
-          evangelium, zamyšlení a krátkou modlitbu.
+          Adventní cesta je webová aplikace k&nbsp;tištěné verzi knihy Advent,
+          která se každoročně vydává v&nbsp;Královéhradecké diecézi. Letos do
+          knihy přispívali katecheté naší diecéze. Každý den si můžeš přečíst
+          evangelium, zamyšlení a&nbsp;krátkou modlitbu.
         </p>
         <div className="mx-6 flex flex-row justify-around mb-8 flex-wrap">
           <Button href={"/autori"} content="Autoři" />
