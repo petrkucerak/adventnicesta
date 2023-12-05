@@ -33,7 +33,8 @@ export default function Post({ post, preview }) {
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>Podcast</h2>
           <p className={`${textClass} text-lg mb-4 italic`}>
             Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného
-            AI.
+            AI. Nahrávky pro tento rok ještě nejsou dogenerované, proto mohou
+            být poškozeny.
           </p>
           <AudioPlayer src={`/audio/${post.slug}.mp3`} autoPlay={false} />
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>
