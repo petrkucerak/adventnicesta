@@ -64,7 +64,10 @@ export default function Post({ post, preview }) {
           <h2 className={`${titleClass} text-2xl font-bold mt-8 mb-2`}>
             Vstupní modlitba
           </h2>
-          <p className={`${textClass} text-lg mb-6`}>{post.preayer}</p>
+          <p
+            className={`${textClass} text-lg mb-6`}
+            dangerouslySetInnerHTML={{ __html: post.preayer }}
+          />
         </article>
         <FontSizeControler titleClass={titleClass} textClass={textClass} />
       </Layout>
