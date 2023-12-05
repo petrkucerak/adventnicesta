@@ -4,6 +4,7 @@ import Button from "../components/utils/button";
 import Calendar from "../components/utils/calendar";
 import NavButtons from "../components/utils/nav-buttons";
 import { getAllPosts } from "../lib/api";
+import Link from "next/link";
 
 export default function Home({ allPosts }) {
   return (
@@ -48,6 +49,25 @@ export default function Home({ allPosts }) {
             target={"_blank"}
             rel={"noreferrer noopener external"}
           />
+        </div>
+        <div className="mb-8">
+          <h2 className="mx-6 text-2xl uppercase font-bold mb-2">
+            Předchozí ročníky
+          </h2>
+          <ul className="mx-6 list-disc pl-6">
+            <li>
+              <Link
+                href={"https://2022.adventnicesta.cz/"}
+                content="Předchozí adventní brožura"
+                target={"_blank"}
+                rel={"external"}
+                className="underline"
+              >
+                2022
+              </Link>{" "}
+              - autory zamyšlení jsou zaměstnanci charity
+            </li>
+          </ul>
         </div>
       </Layout>
     </>
