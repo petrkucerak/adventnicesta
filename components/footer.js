@@ -15,7 +15,7 @@ export default function Footer() {
       <div>
         <span>
           <Link
-            href="mailto:petr@khome.cz"
+            href="mailto:info@adventnicesta.cz"
             target="_blank"
             rel="noreferrer noopener"
             className="mr-2"
@@ -30,7 +30,7 @@ export default function Footer() {
         </span>
         <span>
           <Link
-            href="mailto:petr@khome.cz"
+            href="mailto:info@adventnicesta.cz"
             target="_blank"
             rel="noreferrer noopener"
             className="mr-2"
