@@ -27,8 +27,8 @@ export default function Home({ allPosts }) {
         <p className="mx-6 text-lg mb-8">
           Adventní cesta je webová aplikace k tištěné verzi knihy Advent, která
           se každoročně vydává v Královéhradecké diecézi. Letos do knihy
-          přispívali zaměstanci charity z naší diecéze. Každý den si můžeš
-          přečíst evangelium, zamyšlení a krátkou modlitbu.
+          přispívali katecheté naší diecéze. Každý den si můžeš přečíst
+          evangelium, zamyšlení a krátkou modlitbu.
         </p>
         <div className="mx-6 flex flex-row justify-around mb-8 flex-wrap">
           <Button href={"/autori"} content="Autoři" />
@@ -38,7 +38,15 @@ export default function Home({ allPosts }) {
             href={"https://forms.gle/n19QvNFMW5A5RbNBA"}
             content="Zpětná vazba"
             target={"_blank"}
-            rel={"noreferrer noopener"}
+            rel={"noreferrer noopener external"}
+          />
+          <Button
+            href={
+              "https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=7ad72e34e408463e"
+            }
+            content="Audio nahrávky na Spotify"
+            target={"_blank"}
+            rel={"noreferrer noopener external"}
           />
         </div>
       </Layout>
