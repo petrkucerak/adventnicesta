@@ -32,9 +32,20 @@ export default function Post({ post, preview }) {
           />
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>Podcast</h2>
           <p className={`${textClass} text-lg mb-4 italic`}>
-            Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného
-            AI. Nahrávky pro tento rok ještě nejsou dogenerované, proto mohou
-            být poškozeny.
+            Dnešní zamyšlení si můžeš přehrát i&nbsp;ve formě podcastu
+            generovaného AI přímo tady nebo na{" "}
+            <Link
+              href={
+                "https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=7ad72e34e408463e"
+              }
+              content="Nahrávky na Spotify"
+              target={"_blank"}
+              rel={"noreferrer noopener external"}
+              className="underline"
+            >
+              Spotify
+            </Link>
+            .
           </p>
           <AudioPlayer src={`/audio/${post.slug}.mp3`} autoPlay={false} />
           <h2 className={`${titleClass} text-2xl font-bold mt-8`}>
