@@ -31,7 +31,7 @@ yarn dev
 5. json soubory nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/_days
 6. obrázek nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/public/images
 
-## Notifikace
+<!-- ## Notifikace
 
 Push notifikace jsou spouštěny pomocí služby https://app.onesignal.com/apps.
 
@@ -40,7 +40,7 @@ Momentálně jsou nastaveny 2 templaty:
 1. upozornění, pokud uživatel nenavštíví stránku více jak 13h - notifikace slouží k připomínání denních čtení
 2. upozornění, pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
 
-_Push notifikace podporují všechny platformy kromě mobilního safari._
+_Push notifikace podporují všechny platformy kromě mobilního safari._ -->
 
 ## Audionahrávky
 
