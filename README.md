@@ -1,107 +1,54 @@
-# Adventní cesta
+# Astro Starter Kit: Basics
 
-## O projektu
-
-Cílem tohoto projektu je připravit progresivní webovou aplikaci pro DCM v Hradci Králové, díky které bude možno překlopit adventní brožuru 2022 do online podoby.
-
-**[ZHODNOCENÍ BROŽURY PRO ADVENT 2022](https://github.com/petrkucerak/adventnicesta/tree/main/feedback/2022)**
-
-## Architektura projektu
-
-Aplikace je postavená na Next.js a o to, aby vypadala dobře se stará Tailwind. Obsah stránek s textem je kompilovaný z jsonu, který generuje speciální formulář, viz https://cestapustem.cz/form.
-
-Na pozadí běží service worker, který umožňuje:
-
-1. fungování offline a agresivní caching
-*2. využití push notifikací - ZATÍM NEAKTIVNÍ*
-
-## Příkazy
-
-```
-yarn
-yarn dev
+```sh
+npm create astro@latest -- --template basics
 ```
 
-## Jak přidat texty
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-1. přejdi na stránku https://cestapustem.cz/form/
-2. vyplň formulář dle popisů
-3. stáhni si data ve formátu json
-4. pokud chceš přiložit k textu obrázek, použij stejné jméno jako je využito u vygenerovaného json souboru
-5. json soubory nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/_days
-6. obrázek nahraj sem https://github.com/petrkucerak/cestapustem/tree/Content/public/images
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-<!-- ## Notifikace
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-Push notifikace jsou spouštěny pomocí služby https://app.onesignal.com/apps.
+## 🚀 Project Structure
 
-Momentálně jsou nastaveny 2 templaty:
+Inside of your Astro project, you'll see the following folders and files:
 
-1. upozornění, pokud uživatel nenavštíví stránku více jak 13h - notifikace slouží k připomínání denních čtení
-2. upozornění, pokud uživatel nenavštíví stránku více jak týden - notifikace slouží k agresivnějšímu připomenutí
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-_Push notifikace podporují všechny platformy kromě mobilního safari._ -->
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Audionahrávky
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-V aplikaci jsou generovány audionahrávky k textům pomocí služby Azure Speech Serivces.
+Any static assets, like images, can be placed in the `public/` directory.
 
-Více o této části si můžete přečíst zde: https://blog.petrkucerak.cz/post/Jak-z-blogu-vytvorit-podcast-pomoci-AI.
+## 🧞 Commands
 
-## Privacy
+All commands are run from the root of the project, from a terminal:
 
-### Provozovatel
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-Provozovatelem webové aplikace je držitel domény [adventnicesta.cz](https://www.nic.cz/whois/domain/adventnicesta.cz/)
+## 👀 Want to learn more?
 
-### Cookies
-
-Cookies je krátký textový soubor, který si navštívený web ukládá ve vašem prohlížeči.
-
-Aplikace používá pouze technické soubory cookies, bez kterých by nemohla správně fungovat.
-
-### Analytics
-
-K zkvalitnění produktu shromažďujeme anonymizované údaje pomocí služeb:
-
-1. **Microsoft Clarity**
-    - nástroj sleduje chování uživatelů na webové aplikace
-    - zpracovatelem údajů je společnost Microsoft
-    - více informací najdete na adresách
-      - https://privacy.microsoft.com/cs-cz/privacystatement
-      - https://clarity.microsoft.com/terms
-      - https://clarity.microsoft.com/projects
-2. **CloudFlare Web Analytics**
-    - nástroj monitoruje návštěvnost webové aplikace
-    - zpracovatelem údajů je společnost CloudFlare, Inc.
-    - více informací na jdete na adresách
-      - https://www.cloudflare.com/web-analytics/
-      - https://www.cloudflare.com/privacypolicy/
-
-
-**_Soukromí je velice důležité a proto používáme služby, které jsou plně anonymní!_**
-
-### Notifikace
-
-K správě Push Notifikací využíváme službu OneSignal. Nástroj analyzuje manipulaci s notifikačními bannery. Zpracovatelem je společnost OneSignal.
-
-Více informací najdete na stránkách:
-- https://onesignal.com/privacy
-- https://onesignal.com/privacy_policy
-- https://onesignal.com/
-
-
-### Infrastruktura
-
-Shromažďujeme anonymizované údaje a identifikovatelné údaje obsahující IP adresu pomocí služeb CloudFlare. Tento nástroj sleduje přístupy uživatelů na naše webové stránkách především za účelem zabezpečení služby a prevence podvodů.
-
-Zpracovatelem je společnost CloudFlare, Inc. Toto zpracování je oprávněným zájmem Provozovatele, neboť se jedná o zabezpečení infrastruktury.
-
-Další informace o CloudFlare naleznete na adresách:
-- https://www.cloudflare.com/privacypolicy/
-- https://www.cloudflare.com/website-terms/
-- https://www.cloudflare.com/cookie-policy/
-
-### Zpracování osobních údajů
-
-Z výše poskytnutých informací jasně vyplývá, že provozovatel webové aplikace není správcem žádných osobních údajů.
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
