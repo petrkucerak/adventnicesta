@@ -4,13 +4,23 @@ interface Props {
 }
 
 import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="cs">
   <BaseHead title={title} />
-  <body>
-    <slot />
+  <body
+    class="dark:bg-black dark:text-white bg-stone-200 flex flex-row justify-center shadow-xl"
+  >
+    <div
+      class="min-h-screen flex flex-col justify-between max-w-[800px] bg-white dark:bg-black"
+    >
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>
