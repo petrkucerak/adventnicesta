@@ -3,11 +3,39 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Adventní cesta">
-  <img
-    src="favicon.svg"
-    alt="Fialový rozcestník, který je logo projektu Adventní cesta"
-    title="Logo Advetní cesty"
-    class="h-48"
-  />
-  <h1 class="text-4xl font-bold text-center">Adventní cesta</h1>
+  <div class="mx-6 flex flex-col">
+    <img
+      src="favicon.svg"
+      alt="Fialový rozcestník, který je logo projektu Adventní cesta"
+      title="Logo Advetní cesty"
+      class="h-48"
+    />
+    <h1 class="text-4xl font-bold text-center">Adventní cesta</h1>
+  </div>
+
+  <h2 class="mx-6 text-2xl uppercase font-bold">O projektu</h2>
+  <p class="mx-6 text-lg mb-8">
+    Adventní cesta je webová aplikace k&nbsp;tištěné verzi knihy Advent, která
+    se každoročně vydává v&nbsp;Královéhradecké diecézi. Letos do knihy
+    přispívali katecheté naší diecéze. Každý den si můžeš přečíst evangelium,
+    zamyšlení a&nbsp;krátkou modlitbu.
+  </p>
+
+  <div class="mb-8">
+    <h2 class="mx-6 text-2xl uppercase font-bold mb-2">Předchozí ročníky</h2>
+    <ul class="mx-6 list-disc pl-6">
+      <li>
+        <a
+          href={"https://2022.adventnicesta.cz/"}
+          title="Předchozí adventní brožura"
+          target={"_blank"}
+          rel={"external"}
+          class="underline"
+        >
+          2022
+        </a>{" "}
+        - autory zamyšlení jsou zaměstnanci charity
+      </li>
+    </ul>
+  </div>
 </Layout>
