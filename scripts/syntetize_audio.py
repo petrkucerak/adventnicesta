@@ -1,13 +1,20 @@
 import os
+from dotenv import load_dotenv
 import azure.cognitiveservices.speech as speechsdk
 
+# Load environment variables from .env file
+load_dotenv()
+
 # Azure Speech Services configuration
-AZURE_SPEECH_KEY = "Your_Azure_Speech_Key"
-AZURE_SPEECH_REGION = "Your_Azure_Speech_Region"
+AZURE_SPEECH_KEY = os.getenv("SPEECH_KEY")
+AZURE_SPEECH_REGION = os.getenv("SPEECH_REGION")
+
+if not AZURE_SPEECH_KEY or not AZURE_SPEECH_REGION:
+    raise ValueError("SPEECH_KEY and SPEECH_REGION must be set in the .env file.")
 
 # Input and output folder configuration
 SSML_INPUT_FOLDER = "tmp"  # Folder containing SSML files
-AUDIO_OUTPUT_FOLDER = "audio_output"  # Folder to save synthesized audio files
+AUDIO_OUTPUT_FOLDER = "../public/audio"  # Folder to save synthesized audio files
 
 def synthesize_audio_from_ssml(ssml_file, output_file, speech_key, speech_region):
     """Synthesizes speech from SSML file and saves it as an audio file."""
