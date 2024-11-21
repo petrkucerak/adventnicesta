@@ -51,26 +51,26 @@ def generate_ssml(content, output_file):
     <prosody rate="-15%" pitch="-5%">Vítej u dnešního zamyšlení na Tvé cestě Adventem! Dnes je {content.front_matter.get('dayName', 'Neznámý den')} a autorem zamyšlení je {content.front_matter.get('author', 'Neznámý autor')}.
       <break strength="weak" />
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://38-migrate-project-from-next.adventnicesta.pages.dev/audio/utils/01_adventni_cesta-intro.mp3" />
     <break strength="medium" />
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-5%" pitch="-5%">Úryvek z Bible
-      <break strength="medium" />{content.front_matter.get('bibleQuote', '').replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "")}
+      <break strength="medium" />{content.front_matter.get('bibleQuote', '').replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "").replace(";", ',').replace(" - ", ',').replace("…", '.').replace(" (", ', ').replace(")", ', ')}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/02_adventni_cesta-break1.mp3?raw=true"/>
+    <audio src="https://38-migrate-project-from-next.adventnicesta.pages.dev/audio/utils/02_adventni_cesta-break1.mp3"/>
   </voice>
   <voice name="cs-CZ-AntoninNeural">
     <prosody rate="-15%" pitch="-5%">Zamyšlení
-      <break strength="medium" />{content.body.replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "")}
+      <break strength="medium" />{content.body.replace("&nbsp;", " ").replace("»", "").replace("«", "").replace("„", "").replace("“", "").replace(";", ',').replace(" - ", ',').replace("…", '.').replace(" (", ', ').replace(")", ', ')}
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/03_adventni_cesta-break2.mp3?raw=true"/>
+    <audio src="https://38-migrate-project-from-next.adventnicesta.pages.dev/audio/utils/03_adventni_cesta-break2.mp3"/>
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
       <break strength="medium" />{content.front_matter.get('prayer', '').replace("&nbsp;", " ")} Amen.
     </prosody>
-    <audio src="https://github.com/petrkucerak/adventnicesta/blob/main/_audio/01_adventni_cesta-intro.mp3?raw=true" />
+    <audio src="https://38-migrate-project-from-next.adventnicesta.pages.dev/audio/utils/01_adventni_cesta-intro.mp3" />
   </voice>
 </speak>"""
     with open(output_file, 'w', encoding='utf-8') as f:

@@ -21,27 +21,30 @@ def synthesize_audio_from_ssml(ssml_file, output_file, speech_key, speech_region
     try:
         # Create a speech configuration
         speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=speech_region)
-        speech_config.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio16Khz32KBitRateMonoMp3)
+        speech_config.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio24Khz160KBitRateMonoMp3)
 
         # Set up the speech synthesizer
-        synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=None)
+        audio_config = speechsdk.audio.AudioOutputConfig(filename=output_file)
+        synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
 
         # Read SSML content
         with open(ssml_file, 'r', encoding='utf-8') as f:
             ssml_content = f.read()
 
         # Synthesize speech
-        result = synthesizer.speak_ssml_async(ssml_content).get()
+      #   result = synthesizer.speak_ssml_async(ssml_content).get()
+        result = synthesizer.speak_ssml(ssml_content)
 
         # Check for errors
         if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
-            # Write audio to file
-            with open(output_file, 'wb') as audio_file:
-                audio_file.write(result.audio_data)
             print(f"Audio synthesized and saved to {output_file}")
-        else:
-            print(f"Error synthesizing {ssml_file}: {result.error_details}")
-
+        elif result.reason == speechsdk.ResultReason.Canceled:
+            cancellation_details = result.cancellation_details
+            print(f"Speech synthesis canceled: {cancellation_details.reason}")
+            if cancellation_details.reason == speechsdk.CancellationReason.Error:
+                if cancellation_details.error_details:
+                    print(f"Error details: {cancellation_details.error_details}")
+                    print("Did you set the speech resource key and region values correctly?")
     except Exception as e:
         print(f"Error processing {ssml_file}: {e}")
 
