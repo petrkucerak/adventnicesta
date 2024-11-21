@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Calendar from "../components/Calendar.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Adventní cesta">
@@ -22,9 +23,15 @@ import Calendar from "../components/Calendar.astro";
   <p class="mx-6 text-lg mb-8">
     Adventní cesta je webová aplikace k&nbsp;tištěné verzi knihy Advent, která
     se každoročně vydává v&nbsp;Královéhradecké diecézi. Letos do knihy
-    přispívali katecheté naší diecéze. Každý den si můžeš přečíst evangelium,
-    zamyšlení a&nbsp;krátkou modlitbu.
+    přispívali lékaři a lékařky naší diecéze. Každý den si můžeš přečíst
+    evangelium, zamyšlení a&nbsp;krátkou modlitbu.
   </p>
+
+  <div class="mx-6 flex flex-row justify-around mb-8 flex-wrap">
+    <Button href={"/autori"} content="Autoři" />
+    <Button href={"/slova-biskupa-Jana"} content="Slova biskupa Jana" />
+    <Button href={"/slova-Prokopa-Broze"} content="Slova Prokopa Brože" />
+  </div>
 
   <div class="mb-8">
     <h2 class="mx-6 text-2xl uppercase font-bold mb-2">Předchozí ročníky</h2>
