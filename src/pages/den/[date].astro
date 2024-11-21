@@ -17,7 +17,7 @@ const post = entry.data;
 const { Content } = await entry.render();
 ---
 
-<Layout>
+<Layout title={`${post.dayName} - Adventní cesta`}>
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
     <h1 class="text-4xl font-bold mb-4">{post.dayName}</h1>
