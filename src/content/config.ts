@@ -7,6 +7,10 @@ const denCollection = defineCollection({
     date: z.string().date(),
     author: z.string(),
     authorDetails: z.string(),
+    bibleQuote: z.string(),
+    source: z.string(),
+    contemplation: z.string(),
+    prayer: z.string(),
   }),
 });
 
