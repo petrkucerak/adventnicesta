@@ -68,7 +68,7 @@ def generate_ssml(content, output_file):
   </voice>
   <voice name="cs-CZ-VlastaNeural">
     <prosody rate="-15%" pitch="-5%">Závěrečná modlitba
-      <break strength="medium" />{content.front_matter.get('prayer', '').replace("&nbsp;", " ")} Amen.
+      <break strength="medium" />{content.front_matter.get('prayer', '').replace("&nbsp;", " ")}
     </prosody>
     <audio src="https://38-migrate-project-from-next.adventnicesta.pages.dev/audio/utils/01_adventni_cesta-intro.mp3" />
   </voice>
