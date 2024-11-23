@@ -6,4 +6,4 @@ Allow: /
 Host: https://adventnicesta.cz/
 
 # Sitemaps
-Sitemap: https://adventnicesta.cz/sitemap.xml
+Sitemap: https://adventnicesta.cz/sitemap-index.xml
