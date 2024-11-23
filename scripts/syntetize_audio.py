@@ -1,4 +1,5 @@
 import os
+import time
 from dotenv import load_dotenv
 import azure.cognitiveservices.speech as speechsdk
 
@@ -53,6 +54,7 @@ def synthesize_audio_for_all_ssml(input_folder, output_folder, speech_key, speec
     os.makedirs(output_folder, exist_ok=True)
 
     for filename in os.listdir(input_folder):
+        time.sleep(1)
         if filename.endswith(".ssml"):
             ssml_file = os.path.join(input_folder, filename)
             audio_file = os.path.join(output_folder, filename.replace(".ssml", ".mp3"))
