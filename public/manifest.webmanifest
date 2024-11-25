@@ -17,6 +17,22 @@
       "health",
       "utilities"
    ],
+   "screenshots": [
+      {
+         "src": "/screenshots/screenshot-dark.jpg",
+         "sizes": "331x686",
+         "type": "image/jpg",
+         "form_factor": "narrow",
+         "label": "Zamyšlení v tmavém režimu"
+      },
+      {
+         "src": "/screenshots/screenshot-light.jpg",
+         "sizes": "340x681",
+         "type": "image/jpg",
+         "form_factor": "narrow",
+         "label": "Zamyšlení ve světlém režimu"
+      }
+   ],
    "shortcuts": [
       {
          "name": "Adventní cesta",
