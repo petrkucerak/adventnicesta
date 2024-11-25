@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
 import ArticleHeader from "../../components/ArticleHeader.astro";
 import RenderDate from "../../components/RenderDate.astro";
+import AudioPlayer from "../../components/AudioPlayer.astro";
 
 export async function getStaticPaths() {
   const dayEnteries = await getCollection("den");
@@ -25,6 +26,11 @@ const { Content } = await entry.render();
       dateString={post.date}
       className="font-bold text-xl text-violet-light"
     />
+    <h2 class="text-2xl font-bold mb-2 mt-8">Podcast</h2>
+    <p class="text-lg italic">
+      Dnešní zamyšlení si můžeš přehrát i ve formě podcastu generovaného AI.
+    </p>
+    <AudioPlayer audioSrc={`/audio/${post.date}.mp3`} />
     <h2 class={`text-2xl font-bold mb-2 mt-8`}>Úryvek z Bible</h2>
     <span class={`font-mono`}>({post.source})</span>
     <p class={`mt-4 tracking-wide text-lg`}>{post.bibleQuote}</p>
