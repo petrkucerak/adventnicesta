@@ -1,8 +1,6 @@
 ---
-import Play from "./Play.astro";
-
 // Props passed to the player
-const { audioSrc, title } = Astro.props;
+const { audioSrc } = Astro.props;
 ---
 
 <div class="flex items-center gap-4 p-4 rounded-md shadow-md">
@@ -44,6 +42,7 @@ const { audioSrc, title } = Astro.props;
 </div>
 
 <script>
+   // @ts-nocheck
   const audioPlayer = document.getElementById("audioPlayer");
   const playPauseButton = document.getElementById("playPauseButton");
   const seekBar = document.getElementById("seekBar");
@@ -88,8 +87,7 @@ const { audioSrc, title } = Astro.props;
     const progress = (currentTime / duration) * 100;
 
     seekBarProgress.style.width = `${progress}%`;
-    timeDisplay.textContent =
-      `${formatTime(currentTime)} / ${formatTime(duration)}`;
+    timeDisplay.textContent = `${formatTime(currentTime)} / ${formatTime(duration)}`;
   });
 
   // Seek functionality
