@@ -17,7 +17,7 @@ if (workbox) {
 
   // List of files to precache
   const FILES_TO_CACHE = [
-    "/",
+    "/", // start of pages
     "/autori",
     "/slova-biskupa-Jana",
     "/slova-Prokopa-Broze",
@@ -44,8 +44,12 @@ if (workbox) {
     "/den/2024-12-21",
     "/den/2024-12-22",
     "/den/2024-12-23",
-    "/den/2024-12-24",
+    "/den/2024-12-24", // end of pages
     offlineFallbackPage, // Ensure the fallback page is cached
+    "/icons/alert.svg", // icons
+    "/icons/github.svg",
+    "/icons/mail.svg",
+    "/icon.svg"
   ];
 
   // Precache and route the specified files
