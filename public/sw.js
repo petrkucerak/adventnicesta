@@ -50,7 +50,7 @@ if (workbox) {
     "/icons/github.svg",
     "/icons/mail.svg",
     "/icon.svg",
-    "_astro/autori.D3T6RHc1.css" // css style
+    "/_astro/autori.D3T6RHc1.css" // css style
   ];
 
   // Precache and route the specified files
