@@ -89,7 +89,7 @@ if (workbox) {
       request.destination === "script" ||
       request.destination === "style" ||
       request.destination === "worker",
-    new workbox.strategies.StaleWhileRevalidate({
+    new workbox.strategies.NetworkFirst({
       cacheName: RUNTIME,
       plugins: [
         new workbox.expiration.ExpirationPlugin({
