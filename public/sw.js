@@ -49,7 +49,8 @@ if (workbox) {
     "/icons/alert.svg", // icons
     "/icons/github.svg",
     "/icons/mail.svg",
-    "/icon.svg"
+    "/icon.svg",
+    "_astro/autori.D3T6RHc1.css" // css style
   ];
 
   // Precache and route the specified files
@@ -89,7 +90,7 @@ if (workbox) {
       request.destination === "script" ||
       request.destination === "style" ||
       request.destination === "worker",
-    new workbox.strategies.NetworkFirst({
+    new workbox.strategies.StaleWhileRevalidate({
       cacheName: RUNTIME,
       plugins: [
         new workbox.expiration.ExpirationPlugin({
