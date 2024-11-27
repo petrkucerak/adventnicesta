@@ -50,13 +50,14 @@ if (workbox) {
     "/icons/github.svg",
     "/icons/mail.svg",
     "/icon.svg",
+    "/styles.css",
   ];
 
   // Precache and route the specified files
   workbox.precaching.precacheAndRoute(
     FILES_TO_CACHE.map((url) => ({
       url,
-      revision: null, // Set to null to disable revisioning or provide a unique revision string
+      revision: generateHash(url), // Generate a hash based on file content
     }))
   );
 
@@ -89,7 +90,7 @@ if (workbox) {
       request.destination === "script" ||
       request.destination === "style" ||
       request.destination === "worker",
-    new workbox.strategies.NetworkFirst({
+    new workbox.strategies.StaleWhileRevalidate({
       cacheName: RUNTIME,
       plugins: [
         new workbox.expiration.ExpirationPlugin({
