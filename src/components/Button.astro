@@ -4,14 +4,15 @@ interface Props {
   target: string;
   href?: string;
   rel?: string;
+  className?: string;
 }
 
-const { href, content, target = "_self", rel = "" } = Astro.props;
+const { href, content, target = "_self", rel = "", className="bg-violet-light" } = Astro.props;
 ---
 
 <a
   href={href}
-  class="bg-violet-light rounded text-white px-4 py-2 font-semibold hover:scale-110 duration-200 my-4"
+  class={`${className} rounded text-white px-4 py-2 font-semibold hover:scale-110 duration-200 my-4`}
   rel={rel}
   target={target}
 >

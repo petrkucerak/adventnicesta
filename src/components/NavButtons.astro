@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import Button from "./Button.astro";
+
+// Fetch the collection of pages
+const pagesData = await getCollection("den");
+
+// Helper function to format a date into yyyy-mm-dd
+const formatDate = (date) => date.toISOString().split("T")[0];
+
+// Set a fixed "current" date for testing
+const today = new Date();
+const yesterday = new Date(today);
+const tomorrow = new Date(today);
+
+yesterday.setDate(today.getDate() - 1);
+tomorrow.setDate(today.getDate() + 1);
+
+// Format the dates
+const dates = {
+  yesterday: formatDate(yesterday),
+  today: formatDate(today),
+  tomorrow: formatDate(tomorrow),
+};
+
+// Extract available slugs (dates) from pagesData
+const availablePages = new Set(pagesData.map((page) => page.slug));
+
+// Check if a page is available
+const isPageAvailable = (date) => availablePages.has(date);
+---
+
+<div class="mx-6 flex flex-row justify-around mt-6">
+  {
+    isPageAvailable(dates.yesterday) && (
+      <Button
+        href={`/den/${dates.yesterday}`}
+        content="VČERA"
+        rel=""
+        target="_self"
+        className="bg-violet-light"
+      />
+    )
+  }
+  {
+    isPageAvailable(dates.today) && (
+      <Button
+        href={`/den/${dates.today}`}
+        content="DNES"
+        rel=""
+        target="_self"
+        className="bg-violet-dark"
+      />
+    )
+  }
+  {
+    isPageAvailable(dates.tomorrow) && (
+      <Button
+        href={`/den/${dates.tomorrow}`}
+        content="ZÍTRA"
+        rel=""
+        target="_self"
+        className="bg-violet-light"
+      />
+    )
+  }
+</div>
