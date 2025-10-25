@@ -12,7 +12,6 @@ const days = await getCollection("den");
     {
       days.map((day) => {
         if (day.slug.includes("2025-11")) {
-          console.log(day.slug);
           const date = new Date(day.data.date);
           const out = `${date.getDate()}.`;
           return (
@@ -33,7 +32,6 @@ const days = await getCollection("den");
     {
       days.map((day) => {
         if (day.slug.includes("2025-12")) {
-          console.log(day.slug);
           const date = new Date(day.data.date);
           const out = `${date.getDate()}.`;
           return (
