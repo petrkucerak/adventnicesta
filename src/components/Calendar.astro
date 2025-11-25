@@ -7,21 +7,67 @@ const days = await getCollection("den");
 <div class="mx-6 my-6">
   <h2 class="text-2xl font-bold uppercase mb-1">Kalendář</h2>
 
-  <h3 class="text-xl font-bold">Prosinec</h3>
-  <div class="grid grid-cols-5 auto-cols-max gap-y-2">
+  <h3 class="text-xl font-bold">Listopad</h3>
+  <div class="grid grid-cols-7 auto-cols-max gap-y-2">
     {
       days.map((day) => {
-        const date = new Date(day.data.date);
-        const out = `${date.getDate()}.`;
-        return (
-          <a
-            class="text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light"
-            href={`den/${day.data.date}`}
-          >
-            {out}
-          </a>
-        );
+        if (day.slug.includes("2025-11")) {
+          const date = new Date(day.data.date);
+          const out = `${date.getDate()}.`;
+          return (
+            <a
+              class={`text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light cal-${date.getDay() + 0}`}
+              href={`den/${day.data.date}`}
+            >
+              {out}
+            </a>
+          );
+        }
+      })
+    }
+  </div>
+
+  <h3 class="text-xl font-bold">Prosinec</h3>
+  <div class="grid grid-cols-7 auto-cols-max gap-y-2">
+    {
+      days.map((day) => {
+        if (day.slug.includes("2025-12")) {
+          const date = new Date(day.data.date);
+          const out = `${date.getDate()}.`;
+          return (
+            <a
+              class={`text-lg hover:bg-stone-300 uppercase py-2 px-4 rounded font-semibold text-center duration-200 hover:text-violet-light cal-${date.getDay() + 0}`}
+              href={`den/${day.data.date}`}
+            >
+              {out}
+            </a>
+          );
+        }
       })
     }
   </div>
 </div>
+
+<style>
+  .cal-1 {
+    @apply col-start-1;
+  }
+  .cal-2 {
+    @apply col-start-2;
+  }
+  .cal-3 {
+    @apply col-start-3;
+  }
+  .cal-4 {
+    @apply col-start-4;
+  }
+  .cal-5 {
+    @apply col-start-5;
+  }
+  .cal-6 {
+    @apply col-start-6;
+  }
+  .cal-7 {
+    @apply col-start-7;
+  }
+</style>

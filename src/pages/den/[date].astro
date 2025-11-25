@@ -21,7 +21,7 @@ const { Content } = await entry.render();
 <Layout title={`${post.dayName} - Adventní cesta`}>
   <ArticleHeader />
   <article class="mx-6 max-w-[800px]">
-    <h1 class="text-4xl font-bold mb-4">{post.dayName}</h1>
+    <h1 class="text-4xl font-bold mb-4" set:html={post.dayName} />
     <RenderDate
       dateString={post.date}
       className="font-bold text-xl text-violet-light"
@@ -33,9 +33,14 @@ const { Content } = await entry.render();
     <AudioPlayer audioSrc={`/audio/${post.date}.mp3`} />
     <h2 class={`text-2xl font-bold mb-2 mt-8`}>Úryvek z Bible</h2>
     <span class={`font-mono`}>({post.source})</span>
-    <p class={`mt-4 tracking-wide text-lg`}>{post.bibleQuote}</p>
+    <p
+      class={`mt-4 tracking-wide text-lg text-justify`}
+      set:html={post.bibleQuote}
+    />
     <h2 class={`text-2xl font-bold mt-14 mb-2`}>Zamyšlení</h2>
-    <div class="prose-lg prose-stone prose-p:my-4 dark:prose-invert">
+    <div
+      class="prose-lg prose-stone prose-p:my-4 dark:prose-invert text-justify"
+    >
       <Content />
     </div>
     <p class={`text-lg mt-4 text-stone-600 dark:text-stone-50`}>
@@ -45,6 +50,6 @@ const { Content } = await entry.render();
       </a>)
     </p>
     <h2 class={`text-2xl font-bold mt-14 mb-2`}>Vstupní modlitba</h2>
-    <p class={`text-lg mb-6`}>{post.prayer}</p>
+    <p class={`text-lg mb-6 text-justify`} set:html={post.prayer} />
   </article>
 </Layout>
