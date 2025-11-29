@@ -28,7 +28,11 @@ const { Content } = await entry.render();
     />
     <h2 class="text-2xl font-bold mb-2 mt-8">Podcast</h2>
     <p class="text-lg italic">
-      Dnešní zamyšlení si můžeš přehrát i ve formě podcastu.
+      Dnešní zamyšlení si můžeš přehrát i ve formě podcastu zde nebo na <a
+        href="https://open.spotify.com/show/2I3GPLeVZdPH8dcuVYCDoJ?si=JbG6W8ZnTmWsSCRCA9ilrQ"
+        target="_blank"
+        class="underline">Spotify</a
+      >.
     </p>
     <AudioPlayer audioSrc={`/audio/${post.date}.mp3`} />
     <h2 class={`text-2xl font-bold mb-2 mt-8`}>Úryvek z Bible</h2>
