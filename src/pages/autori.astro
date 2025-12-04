@@ -15,7 +15,7 @@ const days = await getCollection("den");
         days.map((post) => {
           return (
             <li class="mb-4" id={post.data.date}>
-              <strong>{post.data.author}</strong>
+              <strong set:html={post.data.author} />
               <br />
               <span set:html={post.data.authorDetails} />
             </li>

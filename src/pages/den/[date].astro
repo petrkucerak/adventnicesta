@@ -49,9 +49,13 @@ const { Content } = await entry.render();
     </div>
     <p class={`text-lg mt-4 text-stone-600 dark:text-stone-50`}>
       (Autor zamyšlení:{" "}
-      <a href={`/autori#${post.date}`} class="underline">
-        {post.author}
-      </a>)
+      <a
+        href={`/autori#${post.date}`}
+        class="underline"
+        set:html={post.author}
+      />
+
+      )
     </p>
     <h2 class={`text-2xl font-bold mt-14 mb-2`}>Vstupní modlitba</h2>
     <p class={`text-lg mb-6 text-justify`} set:html={post.prayer} />
